@@ -1,9 +1,12 @@
-import './App.css'
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <h1>Hello world</h1>
-  )
+    <div className="bg-[#996DAD] h-screen w-screen p-5">
+      <Navbar />
+    </div>
+  );
 }
 
-export default App
+export default App;
