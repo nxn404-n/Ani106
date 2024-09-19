@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slideBtn {
+  @apply top-1/2 transform -translate-y-1/2 text-5xl  cursor-pointer absolute opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white bg-gray-800 bg-opacity-50 h-2/6 
+}
+
+/* To hide the bottom scrollbar */
+.scroll-container {
+  overflow-x: auto; /* Allows horizontal scrolling */
+  scrollbar-width: none; /* Hides the scrollbar */
+}
+
+/* WebKit-based browsers */
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}

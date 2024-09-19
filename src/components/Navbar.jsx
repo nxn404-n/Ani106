@@ -5,7 +5,7 @@ const Navbar = () => {
   const [input, setInput] = useState("");
   return (
     <div className='flex justify-between'>
-      <h1 className="text-6xl text-white">Ani106</h1>
+      <h1 className="text-4xl text-white">Ani106</h1>
       <div className="flex justify-center items-center bg-slate-400">
         <IoSearch />
         <input

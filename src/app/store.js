@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import homepageReducer from "../feature/homepageSlice";
+import topAniReducer from "../feature/topAniSlice";
 
 const store = configureStore({
   reducer: {
-    homepage: homepageReducer,
+    topAni: topAniReducer,
   }
 })
 
