@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between gap-4'>
       <h1 className='text-4xl text-white'>Ani106</h1>
       <div className='flex justify-center items-center bg-slate-400'>
         <input
@@ -34,7 +34,7 @@ const Navbar = () => {
           placeholder='Search anime'
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className='text-left placeholder:text-black bg-slate-400 ml-2 focus:outline-none'
+          className='text-left placeholder:text-black bg-slate-400 ml-2 focus:outline-none w-36 sm:w-full'
           onKeyDown={handleKeyDown}
         />
         <div
