@@ -44,13 +44,13 @@ const HorizontalSlide = ({ data, sliderId }) => {
 
       {/* Horizontal scrolling container */}
       <div
-        className='flex items-center overflow-x-auto gap-5 scroll-smooth scroll-container z-0'
+        className='flex items-center overflow-x-auto gap-14 scroll-smooth scroll-container z-0 pl-9'
         id={sliderId}
       >
         {data.map((anime) => (
           <div
             key={anime.mal_id}
-            className='flex-shrink-0 w-48 p-3 bg-gray-800 rounded-lg text-center hover:brightness-90'
+            className='flex-shrink-0 w-48  hover:brightness-90 flex relative'
             onClick={() =>
               handleClick({
                 // Passing anime data for to show anime details
@@ -72,14 +72,16 @@ const HorizontalSlide = ({ data, sliderId }) => {
               })
             }
           >
+            <div className='absolute -left-24 top-[65px] w-40 self-end rotate-90'>
+              <p className='text-white text-sm w-full truncate whitespace-nowrap'>
+                <span className="text-xl font-bold">{anime.rank ? `#${anime.rank}` : ""}</span> {anime.title}
+              </p>
+            </div>
             <img
-              className='w-full h-64 object-cover rounded-lg mb-3'
+              className='w-full h-64 object-cover rounded-lg'
               src={anime.images.webp.image_url}
               alt={anime.title}
             />
-            <p className='text-white text-sm truncate'>
-              {anime.rank ? `#${anime.rank}` : ""} {anime.title}
-            </p>
           </div>
         ))}
       </div>
