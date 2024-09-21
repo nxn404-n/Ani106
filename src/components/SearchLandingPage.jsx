@@ -20,7 +20,7 @@ const SearchLandingPage = () => {
       {searchData.map((anime) => (
         <div
           key={anime.mal_id}
-          className='flex items-start border-2'
+          className='flex items-start'
           onClick={() =>
             handleClick({
               // Passing anime data for to show anime details

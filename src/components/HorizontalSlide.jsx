@@ -29,19 +29,21 @@ const HorizontalSlide = ({ data, sliderId }) => {
 
   return (
     // This two are the buttons on the horizontal slider
-    <div className='relative group'>
-      {/* Left Arrow */}
-      <MdOutlineKeyboardArrowLeft
-        className='slideBtn left-0 rounded-e-full z-10'
-        onClick={slideLeft}
-      />
 
-      {/* Right Arrow */}
-      <MdOutlineKeyboardArrowRight
-        className='slideBtn right-0 rounded-s-full z-10'
-        onClick={slideRight}
-      />
+    <div className='relative group flex'>
+      <div className="flex flex-col absolute h-full justify-center right-0 gap-2 py-1">
+        {/* Left Arrow */}
+        <MdOutlineKeyboardArrowLeft
+          className='slideBtn'
+          onClick={slideLeft}
+        />
 
+        {/* Right Arrow */}
+        <MdOutlineKeyboardArrowRight
+          className='slideBtn'
+          onClick={slideRight}
+        />
+      </div>
       {/* Horizontal scrolling container */}
       <div
         className='flex items-center overflow-x-auto gap-14 scroll-smooth scroll-container z-0 pl-9'
@@ -53,7 +55,7 @@ const HorizontalSlide = ({ data, sliderId }) => {
             className='flex-shrink-0 w-48  hover:brightness-90 flex relative'
             onClick={() =>
               handleClick({
-                // Passing anime data for to show anime details
+                // Passing anime data for to show in anime details
                 title: anime.title,
                 title_japanese: anime.title_japanese,
                 image: anime.images.webp.image_url,
@@ -74,7 +76,10 @@ const HorizontalSlide = ({ data, sliderId }) => {
           >
             <div className='absolute -left-24 top-[65px] w-40 self-end rotate-90'>
               <p className='text-white text-sm w-full truncate whitespace-nowrap'>
-                <span className="text-xl font-bold">{anime.rank ? `#${anime.rank}` : ""}</span> {anime.title}
+                <span className='text-xl font-bold'>
+                  {anime.rank ? `#${anime.rank}` : ""}
+                </span>{" "}
+                {anime.title}
               </p>
             </div>
             <img
@@ -84,7 +89,7 @@ const HorizontalSlide = ({ data, sliderId }) => {
             />
           </div>
         ))}
-      </div>
+        </div>
     </div>
   );
 };
