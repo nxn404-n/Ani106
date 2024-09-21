@@ -21,7 +21,7 @@ const SeasonalAni = () => {
     <div>
       <h2 className='text-xl mt-9 text-white'>Seasonal Anime</h2>
       <button className='customBtn' onClick={() => handleClick("winter", 2024)}>
-        <a className="hover:bg-red-600">Winter 2024</a>
+        Winter 2024
       </button>
       <button className='customBtn' onClick={() => handleClick("spring", 2024)}>
         Spring 2024

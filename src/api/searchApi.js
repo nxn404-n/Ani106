@@ -5,7 +5,7 @@ import axios from "axios";
 const fetchSearchData = createAsyncThunk('search/fetchSearchData', async ({ url, value }, { rejectWithValue }) => {
   try {
     const response = await axios.get(`${url}/anime?q=${value}`);
-    return response.data;
+    return response.data.data;
   } catch (error) {
     return rejectWithValue(error.message || "Something went wrong")
   }

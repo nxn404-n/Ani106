@@ -1,21 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import fetchSearchData from "../api/searchApi";
+import { deleteSearchData, setSearchFor, setSearchShowFalse, setSearchShowTrue } from "../feature/searchSlice";
 
 const Navbar = () => {
   const [input, setInput] = useState("");
 
   const dispatch = useDispatch();
   const apiUrl = import.meta.env.VITE_API_URL;
-  const { data } = useSelector((state) => state.search);
 
-  // This function triggers the fetchSearchData function to get the data from the api
+  // This useEffect empties the search data everytime the page refresh and it runs setSearchShowFalse which makes searchShow to false and for that the SearchLandingPage doesnt appear
+  useEffect(() => {
+    dispatch(deleteSearchData())
+    dispatch(setSearchShowFalse())
+  }, [dispatch])
+
+  // This function triggers the fetchSearchData function to get the data from the api and it runs setSearchShowTrue so that it shows the SearchLandingPage
   const handleSubmit = () => {
     dispatch(fetchSearchData({ url: apiUrl, value: input }));
-    console.log(data);
-    console.log("submitted");
-    console.log(input);
+    dispatch(setSearchShowTrue());
+    // This function sends the value of the input box to the redux state which we're gonna use later to show the "Searching for ''" this header in the SearchLandingPage
+    dispatch(setSearchFor(input));
   };
 
   // When pressed enter in the input form it fires the handle submit funtion
