@@ -4,6 +4,7 @@ import SeasonalAni from "./components/SeasonalAni";
 import TopAni from "./components/TopAni";
 import AniDetails from "./components/AniDetails";
 import SearchLandingPage from "./components/SearchLandingPage";
+import UpcomingAni from "./components/UpcomingAni";
 
 function App() {
   const { showDetails } = useSelector((state) => state.aniDetails);
@@ -21,6 +22,7 @@ function App() {
       ) : (
         <div>
           <TopAni />
+          <UpcomingAni />
           <SeasonalAni />
         </div>
       )}

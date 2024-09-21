@@ -3,6 +3,7 @@ import topAniReducer from "../feature/topAniSlice";
 import searchReducer from "../feature/searchSlice";
 import seasonalAniReducer from "../feature/seasonalAniSlice";
 import aniDetailsReducer from "../feature/aniDetailsSlice";
+import upcomingAniReducer from "../feature/upcomingAni";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     search: searchReducer,
     seasonalAni: seasonalAniReducer,
     aniDetails: aniDetailsReducer,
+    upcomingAni: upcomingAniReducer,
   }
 })
 

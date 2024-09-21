@@ -1,5 +1,4 @@
 // This component is made for making the code DRY and its the horizontal slide of the top anime and seasonal anime section
-
 import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowLeft,
@@ -7,6 +6,7 @@ import {
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { setData, setShowDetails } from "../feature/aniDetailsSlice";
+import "../index.css";
 
 const HorizontalSlide = ({ data, sliderId }) => {
   const dispatch = useDispatch();
