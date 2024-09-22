@@ -6,7 +6,7 @@ import HorizontalSlide from "./HorizontalSlide";
 const UpcomingAni = () => {
   const dispatch = useDispatch();
   const apiUrl = import.meta.env.VITE_API_URL;
-  const { data } = useSelector((state) => state.upcomingAni);
+  const { upcomingAnidata } = useSelector((state) => state.upcomingAni);
 
   useEffect(() => {
     dispatch(fetchUpcomingAni(apiUrl));
@@ -16,7 +16,7 @@ const UpcomingAni = () => {
     <div className='flex flex-col gap-7'>
       <h2 className='text-xl mt-9 text-white'>Upcoming Anime</h2>
 
-      <HorizontalSlide data={data} sliderId='UpcomingAni' />
+      <HorizontalSlide data={upcomingAnidata} sliderId='UpcomingAni' />
     </div>
   );
 };

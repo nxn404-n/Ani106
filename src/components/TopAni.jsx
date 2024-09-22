@@ -11,7 +11,7 @@ const TopAni = () => {
   const dispatch = useDispatch();
 
   // Get the top anime data from the redux store
-  const { data } = useSelector((state) => state.topAni);
+  const { topAnidata } = useSelector((state) => state.topAni);
 
   // Fetch top anime list everytime the website loads
   useEffect(() => {
@@ -22,7 +22,7 @@ const TopAni = () => {
     <div className="flex flex-col gap-7">
       <h2 className="text-xl mt-9 text-white">Top Anime</h2>
       
-      <HorizontalSlide data={data} sliderId="TopAni" />
+      <HorizontalSlide data={topAnidata} sliderId="TopAni" />
     </div>
   );
 };

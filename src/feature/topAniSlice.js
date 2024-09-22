@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchTopAni } from "../api/topAniApi";
 
 const initialState = {
-  data: [],
+  topAnidata: [],
   status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
@@ -18,7 +18,7 @@ const topAniSlice = createSlice({
       })
       .addCase(fetchTopAni.fulfilled, (state, { payload }) => {
         state.status = 'succeeded';
-        state.data = payload;
+        state.topAnidata = payload;
       })
       .addCase(fetchTopAni.rejected, (state, { payload }) => {
         state.status = 'failed';
