@@ -14,7 +14,7 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     deleteSearchData: (state) => {
-      state.data = {};
+      state.data = [];
     },
     setSearchShowTrue: (state) => {
       state.searchShow = true;

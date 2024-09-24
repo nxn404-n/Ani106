@@ -9,14 +9,14 @@ import {
   setSearchShowFalse,
   setSearchShowTrue,
 } from "../feature/searchSlice";
-import { setShowDetails } from "../feature/aniDetailsSlice";
+import { clearAnimeData, setShowDetails } from "../feature/aniDetailsSlice";
 
 const Navbar = () => {
   const [input, setInput] = useState("");
 
   const dispatch = useDispatch();
   const apiUrl = import.meta.env.VITE_API_URL;
-  
+
   // This useEffect empties the search data everytime the page refresh and it runs setSearchShowFalse which makes searchShow to false and for that the SearchLandingPage doesnt appear
   useEffect(() => {
     dispatch(deleteSearchData());
@@ -40,26 +40,29 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between gap-4'>
-      {/* when pressing the main logo it goes back to the homepage*/}
-      <Link to="/" onClick={() => dispatch(setShowDetails(false))}>
+      {/* click the main logo to goes back to the homepage*/}
+      <a href='/'>
         <h1 className='text-4xl text-white'>Ani106</h1>
-      </Link>
-      <div className='flex justify-center items-center bg-slate-400'>
-        <input
-          type='text'
-          placeholder='Search anime'
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className='text-left placeholder:text-black bg-slate-400 ml-2 focus:outline-none w-36 sm:w-full'
-          onKeyDown={handleKeyDown}
-        />
-        <div
-          className='bg-slate-700 h-full flex items-center w-9 justify-center'
-          onClick={handleSubmit}
-        >
-          <IoSearch className='text-2xl' />
+      </a>
+
+      <Link to={`/search/${input}`}>
+        <div className='flex justify-center items-center bg-slate-400 h-full'>
+          <input
+            type='text'
+            placeholder='Search anime'
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className='text-left placeholder:text-black bg-slate-400 ml-2 focus:outline-none w-36 sm:w-full'
+            onKeyDown={handleKeyDown}
+          />
+          <div
+            className='bg-slate-700 h-full flex items-center w-9 justify-center'
+            onClick={handleSubmit}
+          >
+            <IoSearch className='text-2xl' />
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

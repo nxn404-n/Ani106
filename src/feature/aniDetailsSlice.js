@@ -14,10 +14,13 @@ const aniDetailsSlice = createSlice({
     },
     setData: (state, { payload }) => {
       state.animeData = payload;
+    },
+    clearAnimeData: (state) => {
+      state.animeData = [];
     }
   }
 })
 
-export const { setShowDetails, setData } = aniDetailsSlice.actions;
+export const { setShowDetails, setData, clearAnimeData } = aniDetailsSlice.actions;
 
 export default aniDetailsSlice.reducer;

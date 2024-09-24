@@ -16,7 +16,7 @@ function App() {
       <Routes>
         {/* Conditional Routes based on searchShow and showDetails */}
         {searchShow ? (
-          <Route path="/search" element={<SearchLandingPage />} />
+          <Route path="/search/:searchFor" element={<SearchLandingPage />} />
         ) : showDetails ? (
           <Route path="/details/:title" element={<AniDetails />} />
         ) : (
