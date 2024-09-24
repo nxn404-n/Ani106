@@ -5,6 +5,7 @@ import { FaPlayCircle } from "react-icons/fa";
 import { MdAccessTime } from "react-icons/md";
 import { FaStar } from "react-icons/fa6";
 import { setData, setShowDetails } from "../feature/aniDetailsSlice";
+import { Link } from "react-router-dom";
 
 const NewAnime = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -58,6 +59,7 @@ const NewAnime = () => {
     <div className='h-full w-full flex flex-col'>
       <h2 className='text-xl mt-9 text-white pb-4'>New This Season</h2>
       {newAnimeData.length > 0 && (
+        <Link key={currentAnime.mal_id} to={`/details/${currentAnime.title}`}>
         <div
           className={`flex h-[270px] ${animationClass}`}
           onClick={() =>
@@ -106,6 +108,7 @@ const NewAnime = () => {
             </div>
           </div>
         </div>
+        </Link>
       )}
     </div>
   );
