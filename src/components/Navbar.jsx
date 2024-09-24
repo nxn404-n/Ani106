@@ -1,20 +1,27 @@
 import { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import fetchSearchData from "../api/searchApi";
-import { deleteSearchData, setSearchFor, setSearchShowFalse, setSearchShowTrue } from "../feature/searchSlice";
+import {
+  deleteSearchData,
+  setSearchFor,
+  setSearchShowFalse,
+  setSearchShowTrue,
+} from "../feature/searchSlice";
+import { setShowDetails } from "../feature/aniDetailsSlice";
 
 const Navbar = () => {
   const [input, setInput] = useState("");
 
   const dispatch = useDispatch();
   const apiUrl = import.meta.env.VITE_API_URL;
-
+  
   // This useEffect empties the search data everytime the page refresh and it runs setSearchShowFalse which makes searchShow to false and for that the SearchLandingPage doesnt appear
   useEffect(() => {
-    dispatch(deleteSearchData())
-    dispatch(setSearchShowFalse())
-  }, [dispatch])
+    dispatch(deleteSearchData());
+    dispatch(setSearchShowFalse());
+  }, [dispatch]);
 
   // This function triggers the fetchSearchData function to get the data from the api and it runs setSearchShowTrue so that it shows the SearchLandingPage
   const handleSubmit = () => {
@@ -33,7 +40,10 @@ const Navbar = () => {
 
   return (
     <div className='flex justify-between gap-4'>
-      <h1 className='text-4xl text-white'>Ani106</h1>
+      {/* when pressing the main logo it goes back to the homepage*/}
+      <Link to="/" onClick={() => dispatch(setShowDetails(false))}>
+        <h1 className='text-4xl text-white'>Ani106</h1>
+      </Link>
       <div className='flex justify-center items-center bg-slate-400'>
         <input
           type='text'

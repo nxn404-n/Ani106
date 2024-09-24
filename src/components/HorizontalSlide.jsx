@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { setData, setShowDetails } from "../feature/aniDetailsSlice";
 import "../index.css";
+import { Link } from "react-router-dom";
 
 const HorizontalSlide = ({ data, sliderId }) => {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ const HorizontalSlide = ({ data, sliderId }) => {
             id={sliderId}
           >
             {data.map((anime) => (
+              <Link key={anime.mal_id} to={`/details/${anime.title}`}>
               <div
                 key={anime.mal_id}
                 className='flex-shrink-0 w-48  hover:brightness-90 flex relative'
@@ -87,7 +89,8 @@ const HorizontalSlide = ({ data, sliderId }) => {
                   src={anime.images.webp.image_url}
                   alt={anime.title}
                 />
-              </div>
+                </div>
+                </Link>
             ))}
           </div>
         </div>
