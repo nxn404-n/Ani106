@@ -13,10 +13,10 @@ const UpcomingAni = () => {
   }, [dispatch, apiUrl]);
 
   return (
-    <div className='flex flex-col gap-7'>
-      <h2 className='text-xl mt-9 text-white'>Upcoming Anime</h2>
+    <div className="flex flex-col gap-7">
+      <h2 className="mt-9 text-xl text-white">Upcoming Anime</h2>
 
-      <HorizontalSlide data={upcomingAnidata} sliderId='UpcomingAni' />
+      <HorizontalSlide data={upcomingAnidata} sliderId="UpcomingAni" />
     </div>
   );
 };

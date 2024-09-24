@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body{
-  background-color: #996DAD;
+  @apply bg-[#201F31] cursor-default text-white font-roboto
+}
+
+h2 {
+  @apply font-slab
 }
 
 .slideBtn {

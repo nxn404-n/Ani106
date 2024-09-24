@@ -15,12 +15,12 @@ const SearchLandingPage = () => {
   };
 
   return (
-    <div className='flex flex-col gap-4 mt-9'>
-      <h2>Search results for &quot;{ searchFor }&quot;</h2>
+    <div className="mt-9 flex flex-col gap-4">
+      <h2>Search results for &quot;{searchFor}&quot;</h2>
       {searchData.map((anime) => (
         <div
           key={anime.mal_id}
-          className='flex items-start'
+          className="flex items-start"
           onClick={() =>
             handleClick({
               // Passing anime data for to show anime details
@@ -45,9 +45,9 @@ const SearchLandingPage = () => {
           <img
             src={anime.images.webp.image_url}
             alt={`${anime.title} image`}
-            className='w-24 h-30 object-cover'
+            className="h-30 w-24 object-cover"
           />
-          <div className='flex flex-col gap-1'>
+          <div className="flex flex-col gap-1">
             <p>{anime.title}</p>
             <p>
               {anime.type}({anime.episodes} eps)

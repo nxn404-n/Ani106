@@ -16,7 +16,7 @@ const SeasonalAni = () => {
 
   const dispatch = useDispatch();
   const { seasonalAniData, seasons } = useSelector(
-    (state) => state.seasonalAni
+    (state) => state.seasonalAni,
   );
 
   const handleClick = (season, year) => {
@@ -29,18 +29,21 @@ const SeasonalAni = () => {
 
   return (
     <div>
-      <h2 className='text-xl mt-9 text-white'>Seasonal Anime</h2>
+      <h2 className="mt-9 text-xl text-white">Seasonal Anime</h2>
 
-      <div>
+      <div className="cursor-pointer">
         <div
-          className='flex items-center gap-1 border-2 max-w-44 justify-center py-1 rounded-md relative'
+          className="relative flex max-w-44 items-center justify-center gap-1 rounded-md border-2 py-1"
           onClick={() => handleShowSeasons()}
         >
           <p>Select any season</p>
-          <MdKeyboardArrowDown className='text-2xl' />
+          <MdKeyboardArrowDown className="text-2xl" />
         </div>
         {showSeasons && (
-          <div className='border-2 max-h-72 max-w-96 overflow-y-scroll cursor-pointer border-red-800 absolute bg-gray-600 z-10 w-1/2' onClick={() => handleShowSeasons()}>
+          <div
+            className="absolute z-10 max-h-72 w-1/2 max-w-96 cursor-pointer overflow-y-scroll border-2 border-red-800 bg-gray-600"
+            onClick={() => handleShowSeasons()}
+          >
             {/* It maps through the seasons data and returns a long list of all the year and seasons */}
             {seasons.map((yearData) => (
               <div key={yearData.year}>
@@ -60,7 +63,7 @@ const SeasonalAni = () => {
         )}
       </div>
 
-      <HorizontalSlide data={seasonalAniData} sliderId='SeasonalAni' />
+      <HorizontalSlide data={seasonalAniData} sliderId="SeasonalAni" />
     </div>
   );
 };

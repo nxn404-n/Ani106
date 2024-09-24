@@ -31,66 +31,66 @@ const HorizontalSlide = ({ data, sliderId }) => {
   return (
     <>
       {data.length > 0 && (
-        <div className='relative group flex'>
-          <div className='flex flex-col absolute h-full justify-center right-0 gap-2 py-1'>
+        <div className="group relative flex">
+          <div className="absolute right-0 flex h-full flex-col justify-center gap-2 py-1">
             {/* Left Arrow */}
             <MdOutlineKeyboardArrowLeft
-              className='slideBtn'
+              className="slideBtn"
               onClick={slideLeft}
             />
 
             {/* Right Arrow */}
             <MdOutlineKeyboardArrowRight
-              className='slideBtn'
+              className="slideBtn"
               onClick={slideRight}
             />
           </div>
           {/* Horizontal scrolling container */}
           <div
-            className='flex items-center overflow-x-auto gap-14 scroll-smooth scroll-container z-0 pl-9'
+            className="scroll-container z-0 flex items-center gap-14 overflow-x-auto scroll-smooth pl-9"
             id={sliderId}
           >
             {data.map((anime) => (
               <Link key={anime.mal_id} to={`/details/${anime.title}`}>
-              <div
-                key={anime.mal_id}
-                className='flex-shrink-0 w-48  hover:brightness-90 flex relative'
-                onClick={() =>
-                  handleClick({
-                    // Passing anime data for to show in anime details
-                    title: anime.title,
-                    title_japanese: anime.title_japanese,
-                    image: anime.images.webp.image_url,
-                    large_image: anime.images.webp.large_image_url,
-                    episodes: anime.episodes,
-                    score: anime.score,
-                    rank: anime.rank ? anime.rank : null,
-                    synopsis: anime.synopsis,
-                    popularity: anime.popularity,
-                    // for information part
-                    members: anime.members,
-                    status: anime.status,
-                    year: anime.year,
-                    favorites: anime.favorites,
-                    rating: anime.rating,
-                  })
-                }
-              >
-                <div className='absolute -left-24 top-[65px] w-40 self-end rotate-90'>
-                  <p className='text-white text-sm w-full truncate whitespace-nowrap'>
-                    <span className='text-xl font-bold'>
-                      {anime.rank ? `#${anime.rank}` : ""}
-                    </span>{" "}
-                    {anime.title}
-                  </p>
+                <div
+                  key={anime.mal_id}
+                  className="relative flex w-48 flex-shrink-0 hover:brightness-90"
+                  onClick={() =>
+                    handleClick({
+                      // Passing anime data for to show in anime details
+                      title: anime.title,
+                      title_japanese: anime.title_japanese,
+                      image: anime.images.webp.image_url,
+                      large_image: anime.images.webp.large_image_url,
+                      episodes: anime.episodes,
+                      score: anime.score,
+                      rank: anime.rank ? anime.rank : null,
+                      synopsis: anime.synopsis,
+                      popularity: anime.popularity,
+                      // for information part
+                      members: anime.members,
+                      status: anime.status,
+                      year: anime.year,
+                      favorites: anime.favorites,
+                      rating: anime.rating,
+                    })
+                  }
+                >
+                  <div className="absolute -left-24 top-[65px] w-40 rotate-90 self-end">
+                    <p className="w-full truncate whitespace-nowrap text-sm text-white">
+                      <span className="text-xl font-bold">
+                        {anime.rank ? `#${anime.rank}` : ""}
+                      </span>{" "}
+                      {anime.title}
+                    </p>
+                  </div>
+                  <img
+                    className="h-64 w-full rounded-lg object-cover"
+                    src={anime.images.webp.image_url}
+                    alt={anime.title}
+                  />
                 </div>
-                <img
-                  className='w-full h-64 object-cover rounded-lg'
-                  src={anime.images.webp.image_url}
-                  alt={anime.title}
-                />
-                </div>
-                </Link>
+              </Link>
             ))}
           </div>
         </div>
@@ -110,7 +110,7 @@ HorizontalSlide.propTypes = {
       }).isRequired,
       title: PropTypes.string.isRequired,
       rank: PropTypes.number,
-    })
+    }),
   ).isRequired,
   sliderId: PropTypes.string.isRequired,
 };

@@ -1,10 +1,9 @@
 import NewAnime from "./NewAnime";
-import TopAni from './TopAni';
-import UpcomingAni from './UpcomingAni';
-import SeasonalAni from './SeasonalAni';
+import TopAni from "./TopAni";
+import UpcomingAni from "./UpcomingAni";
+import SeasonalAni from "./SeasonalAni";
 
 const Homepage = () => {
-
   return (
     <div>
       <NewAnime />
@@ -12,7 +11,7 @@ const Homepage = () => {
       <UpcomingAni />
       <SeasonalAni />
     </div>
-  )
-}
+  );
+};
 
 export default Homepage;
