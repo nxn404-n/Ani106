@@ -4,6 +4,7 @@ import searchReducer from "../feature/searchSlice";
 import seasonalAniReducer from "../feature/seasonalAniSlice";
 import aniDetailsReducer from "../feature/aniDetailsSlice";
 import upcomingAniReducer from "../feature/upcomingAni";
+import newAnimeReducer from "../feature/newAnimeSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     seasonalAni: seasonalAniReducer,
     aniDetails: aniDetailsReducer,
     upcomingAni: upcomingAniReducer,
+    newAnime: newAnimeReducer,
   }
 })
 

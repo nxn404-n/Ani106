@@ -3,7 +3,6 @@ import { FaStar } from "react-icons/fa6";
 
 const AniDetails = () => {
   const animeData = useSelector((state) => state.aniDetails.animeData);
-  console.log(animeData)
 
   return (
     <div>

@@ -26,7 +26,6 @@ const SeasonalAni = () => {
   useEffect(() => {
     dispatch(getSeasonsData(apiUrl));
   }, [apiUrl, dispatch]);
-  console.log(seasons);
 
   return (
     <div>
