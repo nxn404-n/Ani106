@@ -33,14 +33,14 @@ const SeasonalAni = () => {
 
       <div>
         <div
-          className='flex items-center gap-1 border-2 max-w-44 justify-center py-1 rounded-md'
+          className='flex items-center gap-1 border-2 max-w-44 justify-center py-1 rounded-md relative'
           onClick={() => handleShowSeasons()}
         >
           <p>Select any season</p>
           <MdKeyboardArrowDown className='text-2xl' />
         </div>
         {showSeasons && (
-          <div className='border-2 max-h-72 max-w-96 overflow-y-scroll cursor-pointer'>
+          <div className='border-2 max-h-72 max-w-96 overflow-y-scroll cursor-pointer border-red-800 absolute bg-gray-600 z-10 w-1/2' onClick={() => handleShowSeasons()}>
             {/* It maps through the seasons data and returns a long list of all the year and seasons */}
             {seasons.map((yearData) => (
               <div key={yearData.year}>

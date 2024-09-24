@@ -30,11 +30,11 @@ body{
 }
 
 .slide-in {
-  animation: slideIn 500ms linear;
+  animation: slideIn 800ms linear;
 }
 
 .slide-out {
-  animation: slideOut 500ms linear;
+  animation: slideOut 800ms linear;
 }
 
 @keyframes slideIn {

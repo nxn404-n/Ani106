@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom"; // Import React Rout
 import Navbar from "./components/Navbar";
 import AniDetails from "./components/AniDetails";
 import SearchLandingPage from "./components/SearchLandingPage";
-import Homepage from './components/Homepage';
+import Homepage from "./components/Homepage";
 
 function App() {
   const { showDetails } = useSelector((state) => state.aniDetails);
@@ -16,15 +16,15 @@ function App() {
       <Routes>
         {/* Conditional Routes based on searchShow and showDetails */}
         {searchShow ? (
-          <Route path="/search/:searchFor" element={<SearchLandingPage />} />
+          <Route path='/search/:searchFor' element={<SearchLandingPage />} />
         ) : showDetails ? (
-          <Route path="/details/:title" element={<AniDetails />} />
+          <Route path='/details/:title' element={<AniDetails />} />
         ) : (
-          <Route path="/" element={<Homepage />} />
+          <Route path='/' element={<Homepage />} />
         )}
 
         {/* Catch-all route that redirects to home if no match */}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </div>
   );

@@ -30,7 +30,7 @@ const NewAnime = () => {
           (prevState) => (prevState + 1) % newAnimeData.length
         );
         setAnimationClass("slide-in"); // Start slide-in animation for new content
-      }, 500);
+      }, 800);
     }, 3000); // Interval for changing content
 
     // Preload the next image

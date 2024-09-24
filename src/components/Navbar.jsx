@@ -9,7 +9,6 @@ import {
   setSearchShowFalse,
   setSearchShowTrue,
 } from "../feature/searchSlice";
-import { clearAnimeData, setShowDetails } from "../feature/aniDetailsSlice";
 
 const Navbar = () => {
   const [input, setInput] = useState("");

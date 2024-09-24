@@ -14,12 +14,12 @@ const HorizontalSlide = ({ data, sliderId }) => {
   // This functions controll the left and right slide buttons
   const slideLeft = () => {
     const slider = document.getElementById(sliderId);
-    slider.scrollLeft -= 250;
+    slider.scrollLeft -= 400;
   };
 
   const slideRight = () => {
     const slider = document.getElementById(sliderId);
-    slider.scrollLeft += 250;
+    slider.scrollLeft += 400;
   };
 
   // This function helps to send data to show anime details page
