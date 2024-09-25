@@ -20,7 +20,7 @@ const SearchLandingPage = () => {
       {searchData.map((anime) => (
         <div
           key={anime.mal_id}
-          className="flex items-start"
+          className="flex items-start gap-3"
           onClick={() =>
             handleClick({
               // Passing anime data for to show anime details
@@ -48,7 +48,7 @@ const SearchLandingPage = () => {
             className="h-30 w-24 object-cover"
           />
           <div className="flex flex-col gap-1">
-            <p>{anime.title}</p>
+            <p className="text-lg">{anime.title}</p>
             <p>
               {anime.type}({anime.episodes} eps)
             </p>
