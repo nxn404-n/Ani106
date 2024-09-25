@@ -28,12 +28,12 @@ const SeasonalAni = () => {
   }, [apiUrl, dispatch]);
 
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       <h2 className="mt-9 text-xl">Seasonal Anime</h2>
 
       <div className="cursor-pointer">
         <div
-          className="relative flex max-w-44 items-center justify-center gap-1 rounded-md border-2 py-1"
+          className="relative flex max-w-44 items-center justify-center gap-1 rounded-md border-2 border-[#FFBADE] py-1"
           onClick={() => handleShowSeasons()}
         >
           <p>Select any season</p>
@@ -41,21 +41,23 @@ const SeasonalAni = () => {
         </div>
         {showSeasons && (
           <div
-            className="absolute z-10 max-h-72 w-1/2 max-w-96 cursor-pointer overflow-y-scroll border-2 border-red-800 bg-gray-600"
+            className="absolute z-10 max-h-72 w-1/2 max-w-96 cursor-pointer overflow-y-scroll border-2 border-[#FFBADE] bg-[#201F31] p-3 rounded-md flex flex-col gap-5"
             onClick={() => handleShowSeasons()}
           >
             {/* It maps through the seasons data and returns a long list of all the year and seasons */}
             {seasons.map((yearData) => (
               <div key={yearData.year}>
-                <hr />
                 <strong>{yearData.year}</strong>
                 {yearData.seasons.map((season, index) => (
-                  <div
-                    key={`${yearData.year}-${index}`}
-                    onClick={() => handleClick(season, yearData.year)}
-                  >
-                    {season} {yearData.year}
-                  </div>
+                  <>
+                    <div
+                      key={`${yearData.year}-${index}`}
+                      onClick={() => handleClick(season, yearData.year)}
+                    >
+                      {season} {yearData.year}
+                    </div>
+                    <hr />
+                  </>
                 ))}
               </div>
             ))}

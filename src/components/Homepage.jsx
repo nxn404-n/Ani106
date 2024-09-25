@@ -8,8 +8,8 @@ const Homepage = () => {
     <div>
       <NewAnime />
       <TopAni />
-      <UpcomingAni />
       <SeasonalAni />
+      <UpcomingAni />
     </div>
   );
 };
