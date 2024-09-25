@@ -26,6 +26,7 @@ const Navbar = () => {
     dispatch(fetchSearchData({ url: apiUrl, value: input }));
     dispatch(setSearchShowTrue());
     dispatch(setSearchFor(input));
+    setInput(""); //Empties the input field
     navigate(`/search/${input}`); // Redirects after the search is handled
   };
 
