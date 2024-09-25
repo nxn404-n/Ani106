@@ -56,7 +56,7 @@ const SeasonalAni = () => {
                     >
                       {season} {yearData.year}
                     </div>
-                    <hr />
+                    <hr className="border-[#FFBADE]"/>
                   </>
                 ))}
               </div>
