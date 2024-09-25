@@ -29,7 +29,7 @@ const SeasonalAni = () => {
 
   return (
     <div>
-      <h2 className="mt-9 text-xl text-white">Seasonal Anime</h2>
+      <h2 className="mt-9 text-xl">Seasonal Anime</h2>
 
       <div className="cursor-pointer">
         <div

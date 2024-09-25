@@ -7,7 +7,7 @@ body{
 }
 
 h2 {
-  @apply font-slab
+  @apply font-slab text-[#FFBADE] 
 }
 
 .slideBtn {
@@ -43,7 +43,7 @@ h2 {
 
 @keyframes slideIn {
   from {
-    transform: translateX(100%);
+    transform: translateX(250%);
   }
   to {
     transform: translateX(0);
@@ -52,10 +52,10 @@ h2 {
 
 @keyframes slideOut {
   to {
-    transform: translateX(-100%);
+    transform: translateX(-250%);
   }
 }
 
-.pause:hover {
-  animation-play-state: paused;
+.fade-opacity {
+  mask-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 1) 100%);
 }

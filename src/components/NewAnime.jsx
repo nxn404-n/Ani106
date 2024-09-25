@@ -57,11 +57,13 @@ const NewAnime = () => {
 
   return (
     <div className="flex h-full w-full flex-col overflow-hidden">
-      <h2 className="mt-9 pb-4 text-xl text-white">New This Season</h2>
+      <h2 className="mt-9 pb-4 text-xl">New This Season</h2>
       {newAnimeData.length > 0 && (
-        <Link key={currentAnime.mal_id} to={`/details/${currentAnime.title}`}>
+        <Link key={currentAnime.mal_id} to={`/details/${currentAnime.title}`} className="h-[265px]">
+          
           <div
-            className={`flex h-[270px] ${animationClass}`}
+            className={`flex h-full ${animationClass} justify-between`}
+            // sends data to show anime details
             onClick={() =>
               handleClick({
                 title: currentAnime.title,
@@ -81,16 +83,23 @@ const NewAnime = () => {
               })
             }
           >
+
+            {/* Anime image */}
             <div key={currentAnime.mal_id}>
               <img
-                src={currentAnime.images.webp.image_url}
+                src={currentAnime.images.webp.large_image_url}
                 alt={`${currentAnime.title} anime picture`}
-                className="h-auto w-auto"
+                className="h-auto w-auto fade-opacity"
               />
             </div>
-            <div className="flex w-1/2 flex-col justify-between">
-              <div className="max-w-44 text-lg text-white">
+
+            {/* Show how many eps the type and score of the anime and synopsis */}
+            <div className="flex w-1/2 flex-col gap-5 p-2">
+              <div className="max-w-44 text-lg text-white font-bold">
                 <p className="truncate">{currentAnime.title}</p>
+              </div>
+              <div className="w-full h-32">
+                <p className="line-clamp-5">{ currentAnime.synopsis }</p>
               </div>
               <div className="flex gap-2 text-sm">
                 <div className="mini">
@@ -99,7 +108,7 @@ const NewAnime = () => {
                 </div>
                 <div className="mini">
                   <MdAccessTime />
-                  <p>{currentAnime.episodes}</p>
+                  <p>{currentAnime.episodes}eps</p>
                 </div>
                 <div className="mini">
                   <FaStar />
@@ -107,7 +116,9 @@ const NewAnime = () => {
                 </div>
               </div>
             </div>
+
           </div>
+          
         </Link>
       )}
     </div>
