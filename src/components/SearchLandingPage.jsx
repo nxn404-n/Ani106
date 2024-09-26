@@ -16,7 +16,7 @@ const SearchLandingPage = () => {
   };
 
   return (
-    <div className="mt-9 flex flex-col gap-4">
+    <div className="mt-9 flex flex-col gap-4 sm:gap-5 mb-7 sm:pl-7">
       <h2>Search results for &quot;{searchFor}&quot;</h2>
       {searchData.map((anime) => (
         <Link 
