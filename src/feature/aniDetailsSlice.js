@@ -9,8 +9,8 @@ const aniDetailsSlice = createSlice({
   name: 'aniDetails',
   initialState,
   reducers: {
-    setShowDetails: (state) => {
-      state.showDetails = !state.showDetails;
+    setShowDetails: (state, { payload }) => {
+      state.showDetails = payload;
     },
     setData: (state, { payload }) => {
       state.animeData = payload;

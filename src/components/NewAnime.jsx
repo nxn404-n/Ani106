@@ -48,7 +48,7 @@ const NewAnime = () => {
   }, [dispatch, apiUrl]);
 
   const handleClick = (data) => {
-    dispatch(setShowDetails());
+    dispatch(setShowDetails(true));
     dispatch(setData(data));
   };
 

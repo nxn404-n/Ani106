@@ -24,7 +24,7 @@ const HorizontalSlide = ({ data, sliderId }) => {
 
   // This function helps to send data to show anime details page
   const handleClick = (data) => {
-    dispatch(setShowDetails());
+    dispatch(setShowDetails(true));
     dispatch(setData(data));
   };
 

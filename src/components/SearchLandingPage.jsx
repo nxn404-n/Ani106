@@ -22,7 +22,6 @@ const SearchLandingPage = () => {
         <Link 
           key={anime.mal_id} 
           to={`/details/${anime.title}`} 
-          className="border-2"
           onClick={() => handleClick({
             // Passing anime data to show details page
             title: anime.title,
