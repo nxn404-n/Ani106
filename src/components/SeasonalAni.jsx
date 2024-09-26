@@ -10,6 +10,12 @@ const SeasonalAni = () => {
   // This state decides that if the seasons dropdown menu is gonna show or not
   const [showSeasons, setShowSeasons] = useState(false);
 
+  // Stores the value that was clicked so that we can show it above the list
+  const [currentSeason, setCurrentSeason] = useState({
+    year: '',
+    season: '',
+  })
+
   const handleShowSeasons = () => {
     setShowSeasons(!showSeasons);
   };
@@ -21,6 +27,10 @@ const SeasonalAni = () => {
 
   const handleClick = (season, year) => {
     dispatch(fetchSeasonalAniData({ url: apiUrl, season: season, year: year }));
+    setCurrentSeason({
+      year: year,
+      season: season,
+    })
   };
 
   useEffect(() => {
@@ -65,7 +75,10 @@ const SeasonalAni = () => {
         )}
       </div>
 
+      <div className="flex flex-col gap-4">
+        <div className="text-lg pl-2 ">{ currentSeason.season }{ currentSeason.year }</div>
       <HorizontalSlide data={seasonalAniData} sliderId="SeasonalAni" />
+      </div>
     </div>
   );
 };
