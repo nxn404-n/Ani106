@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between gap-4">
+    <div className="flex justify-between gap-4 pl-4 pt-4">
       {/* Click the main logo to go back to the homepage */}
       <a href="/">
         <h1 className="font-anton text-4xl text-white">Ani106</h1>

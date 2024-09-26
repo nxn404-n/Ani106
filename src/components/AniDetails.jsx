@@ -5,13 +5,21 @@ const AniDetails = () => {
   const animeData = useSelector((state) => state.aniDetails.animeData);
 
   return (
-    <div>
-      <div className="mt-7 flex flex-col">
-        <img src={animeData.large_image} alt={`${animeData.title} image`} />
-        <h1 className="text-xl text-white pt-2">
+    <div className="flex flex-col sm:p-6">
+      <div className="flex flex-col sm:flex-row gap-3">
+
+      <div>
+        <img
+          src={animeData.large_image}
+          alt={`${animeData.title} image`}
+          className="w-fit"
+        />
+        </div>
+        <div className="flex flex-col w-full items-start">
+
+        <h1 className="pt-2 text-xl text-white sm:text-2xl">
           {animeData.title} / {animeData.title_japanese}
         </h1>
-      </div>
 
       <div className="flex flex-col gap-3">
         {animeData.rank && (
@@ -33,20 +41,23 @@ const AniDetails = () => {
 
         {/* Here is the information section */}
         <div>
-          <h2 className="border-b-2 border-[#FFBADE]">Information</h2>
+          <h2 className="border-b-2 border-[#FFBADE] mb-3 sm:text-xl">Information</h2>
           <p>Episodes: {animeData.episodes}</p>
           <p>Status: {animeData.status}</p>
           <p>Year: {animeData.year}</p>
           <p>Favorites: {animeData.favorites}</p>
           <p>Rating: {animeData.rating}</p>
         </div>
-
-        {/* Here is the synopsis section */}
-        <div className="h-60 overflow-scroll">
-          <h2 className="sticky top-0 bg-[#201F31] border-b-2 border-[#FFBADE]">Synopsis</h2>
-          <hr className="border-black" />
-          <p className="text-sm">{animeData.synopsis}</p>
+      </div>
+      </div>
         </div>
+      {/* Here is the synopsis section */}
+      <div className="h-60 overflow-scroll mt-3 sm:text-xl">
+        <h2 className="sticky top-0 border-b-2 border-[#FFBADE] bg-[#201F31] mb-3">
+          Synopsis
+        </h2>
+
+        <p className="text-sm sm:text-lg">{animeData.synopsis}</p>
       </div>
     </div>
   );

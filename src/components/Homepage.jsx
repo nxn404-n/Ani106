@@ -5,7 +5,7 @@ import SeasonalAni from "./SeasonalAni";
 
 const Homepage = () => {
   return (
-    <div>
+    <div className="pl-4">
       <NewAnime />
       <TopAni />
       <SeasonalAni />
