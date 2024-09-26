@@ -47,7 +47,7 @@ const SeasonalAni = () => {
             {/* It maps through the seasons data and returns a long list of all the year and seasons */}
             {seasons.map((yearData) => (
               <div key={yearData.year}>
-                <strong>{yearData.year}</strong>
+                <strong className="text-[#FFBADE]">{yearData.year}</strong>
                 {yearData.seasons.map((season, index) => (
                   <>
                     <div
@@ -56,7 +56,7 @@ const SeasonalAni = () => {
                     >
                       {season} {yearData.year}
                     </div>
-                    <hr className="border-[#FFBADE]"/>
+                    <hr/>
                   </>
                 ))}
               </div>

@@ -59,10 +59,13 @@ const NewAnime = () => {
     <div className="flex h-full w-full flex-col overflow-hidden">
       <h2 className="mt-9 pb-4 text-xl">New This Season</h2>
       {newAnimeData.length > 0 && (
-        <Link key={currentAnime.mal_id} to={`/details/${currentAnime.title}`} className="h-[265px]">
-          
+        <Link
+          key={currentAnime.mal_id}
+          to={`/details/${currentAnime.title}`}
+          className="h-[265px] sm:h-96"
+        >
           <div
-            className={`flex h-full ${animationClass} justify-between`}
+            className={`flex h-full ${animationClass} justify-between sm:justify-start`}
             // sends data to show anime details
             onClick={() =>
               handleClick({
@@ -83,23 +86,24 @@ const NewAnime = () => {
               })
             }
           >
-
             {/* Anime image */}
-            <div key={currentAnime.mal_id}>
+            <div key={currentAnime.mal_id} className="w-[270px]">
               <img
                 src={currentAnime.images.webp.large_image_url}
                 alt={`${currentAnime.title} anime picture`}
-                className="h-auto w-auto fade-opacity"
+                className="fade-opacity h-[265px] sm:h-full"
               />
             </div>
 
             {/* Show how many eps the type and score of the anime and synopsis */}
             <div className="flex w-1/2 flex-col gap-5 p-2">
-              <div className="max-w-44 text-lg text-white font-bold">
+              <div className="max-w-full text-lg font-bold text-white sm:text-2xl">
                 <p className="truncate">{currentAnime.title}</p>
               </div>
-              <div className="w-full h-32">
-                <p className="line-clamp-5">{ currentAnime.synopsis }</p>
+              <div className="h-full w-full sm:pt-2">
+                <p className="line-clamp-5 sm:line-clamp-6">
+                  {currentAnime.synopsis}
+                </p>
               </div>
               <div className="flex gap-2 text-sm">
                 <div className="mini">
@@ -116,9 +120,7 @@ const NewAnime = () => {
                 </div>
               </div>
             </div>
-
           </div>
-          
         </Link>
       )}
     </div>
