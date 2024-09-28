@@ -3,7 +3,7 @@ import fetchUpcomingAni from "../api/upcomingAniApi";
 
 const initialState = {
   upcomingAnidata: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  upcomingAnimeStatus: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
 
@@ -14,14 +14,14 @@ const upcomingAni = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUpcomingAni.pending, (state) => {
-        state.status = 'loading';
+        state.upcomingAnimeStatus = 'loading';
       })
       .addCase(fetchUpcomingAni.fulfilled, (state, { payload }) => {
-        state.status = 'succeeded';
+        state.upcomingAnimeStatus = 'succeeded';
         state.upcomingAnidata = payload;
       })
       .addCase(fetchUpcomingAni.rejected, (state, { payload }) => {
-        state.status = 'failed';
+        state.upcomingAnimeStatus = 'failed';
         state.error = payload;
     })
   }

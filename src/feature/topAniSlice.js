@@ -3,7 +3,7 @@ import { fetchTopAni } from "../api/topAniApi";
 
 const initialState = {
   topAnidata: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  topAniStatus: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
 const topAniSlice = createSlice({
@@ -14,14 +14,14 @@ const topAniSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTopAni.pending, (state) => {
-        state.status = 'loading';
+        state.topAniStatus = 'loading';
       })
       .addCase(fetchTopAni.fulfilled, (state, { payload }) => {
-        state.status = 'succeeded';
+        state.topAniStatus = 'succeeded';
         state.topAnidata = payload;
       })
       .addCase(fetchTopAni.rejected, (state, { payload }) => {
-        state.status = 'failed';
+        state.topAniStatus = 'failed';
         state.error = payload;
     })
   }

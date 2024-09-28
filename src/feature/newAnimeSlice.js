@@ -3,7 +3,7 @@ import fetchNewAnime from "../api/newAniApi";
 
 const initialState = {
   newAnimeData: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
+  newAnimeStatus: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
 
@@ -14,14 +14,14 @@ const newAnimeSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchNewAnime.pending, (state) => {
-        state.status = 'loading';
+        state.newAnimeStatus = 'loading';
       })
       .addCase(fetchNewAnime.fulfilled, (state, {payload}) => {
-        state.status = 'succeeded';
+        state.newAnimeStatus = 'succeeded';
         state.newAnimeData = payload;
       })
       .addCase(fetchNewAnime.rejected, (state, { payload }) => {
-        state.status = 'failed';
+        state.newAnimeStatus = 'failed';
         state.error = payload;
     })
   }

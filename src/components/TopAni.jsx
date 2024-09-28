@@ -11,7 +11,7 @@ const TopAni = () => {
   const dispatch = useDispatch();
 
   // Get the top anime data from the redux store
-  const { topAnidata } = useSelector((state) => state.topAni);
+  const { topAnidata, topAniStatus } = useSelector((state) => state.topAni);
 
   // Fetch top anime list everytime the website loads
   useEffect(() => {
@@ -19,11 +19,15 @@ const TopAni = () => {
   }, [dispatch, apiUrl]);
 
   return (
-    <div className="flex flex-col gap-7">
-      <h2 className="mt-9 text-xl">Top Anime</h2>
-
-      <HorizontalSlide data={topAnidata} sliderId="TopAni" />
-    </div>
+    <>
+      {topAniStatus === 'succeeded' ? (
+        <div className="flex flex-col gap-7">
+          <h2 className="mt-9 text-xl">Top Anime</h2>
+  
+          <HorizontalSlide data={topAnidata} sliderId="TopAni" />
+        </div>
+      ) : null}
+    </>
   );
 };
 

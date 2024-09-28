@@ -9,7 +9,9 @@ import { Link } from "react-router-dom";
 
 const NewAnime = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
-  const { newAnimeData } = useSelector((state) => state.newAnime);
+  const { newAnimeData, newAnimeStatus } = useSelector(
+    (state) => state.newAnime,
+  );
   const dispatch = useDispatch();
 
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
@@ -54,6 +56,11 @@ const NewAnime = () => {
 
   const currentAnime =
     newAnimeData.length > 0 ? newAnimeData[currentCardIndex] : null;
+  
+  // Conditionally rendering the content of newAnime so that it is only visible when we get data from the API
+    if (newAnimeStatus !== "succeeded") {
+      return null;
+    }
 
   return (
     <div className="flex h-full w-full flex-col overflow-hidden">
