@@ -76,7 +76,8 @@ const SeasonalAni = () => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="text-lg pl-2 ">{ currentSeason.season }{ currentSeason.year }</div>
+        {/* This shows the selected season and year and the data*/}
+        <div className="text-xl pl-2 ">{ currentSeason.season } { currentSeason.year }</div>
       <HorizontalSlide data={seasonalAniData} sliderId="SeasonalAni" />
       </div>
     </div>
