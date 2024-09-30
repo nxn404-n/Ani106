@@ -10,7 +10,7 @@ const SearchLandingPage = () => {
 
   // This function helps to send data to show anime details page and hide the SearchLandingPage
   const handleClick = (data) => {
-    dispatch(setShowDetails());
+    dispatch(setShowDetails(true));
     dispatch(setData(data));
     dispatch(setSearchShowFalse());
   };
