@@ -52,12 +52,12 @@ const Navbar = () => {
           className="ml-2 w-36 text-left opacity-50 placeholder:text-black focus:opacity-70 focus:outline-none sm:w-full text-black"
           onKeyDown={handleKeyDown}
         />
-        <div
+        <button
           className="flex h-full w-9 items-center justify-center"
           onClick={handleSubmit}
         >
           <IoSearch className="text-2xl text-black" />
-        </div>
+        </button>
       </div>
     </div>
   );
