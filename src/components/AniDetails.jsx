@@ -17,9 +17,9 @@ const AniDetails = () => {
         </div>
         <div className="flex flex-col w-full items-start">
 
-        <h1 className="pt-2 text-xl text-white sm:text-2xl">
+        <h2 className="pt-2 text-xl text-white sm:text-2xl">
           {animeData.title} / {animeData.title_japanese}
-        </h1>
+        </h2>
 
       <div className="flex flex-col gap-3">
         {animeData.rank && (
@@ -31,7 +31,7 @@ const AniDetails = () => {
         <div className="flex gap-3">
           <div className="flex items-center">
             <FaStar className="text-[#F9A50B]" />
-            <p>rating: {animeData.score}/10</p>
+            <p>score: {animeData.score}/10</p>
           </div>
           <p>Popularity #{animeData.popularity}</p>
           <p>
@@ -41,7 +41,7 @@ const AniDetails = () => {
 
         {/* Here is the information section */}
         <div>
-          <h2 className="border-b-2 border-[#FFBADE] mb-3 sm:text-xl">Information</h2>
+          <h3 className="border-b-2 border-[#FFBADE] mb-3 sm:text-xl">Information</h3>
           <p>Episodes: {animeData.episodes}</p>
           <p>Status: {animeData.status}</p>
           <p>Year: {animeData.year}</p>
@@ -53,9 +53,9 @@ const AniDetails = () => {
         </div>
       {/* Here is the synopsis section */}
       <div className="h-60 overflow-scroll mt-3 sm:text-xl">
-        <h2 className="sticky top-0 border-b-2 border-[#FFBADE] bg-[#201F31] mb-3">
+        <h3 className="sticky top-0 border-b-2 border-[#FFBADE] bg-[#201F31] mb-3">
           Synopsis
-        </h2>
+        </h3>
 
         <p className="text-sm sm:text-lg">{animeData.synopsis}</p>
       </div>
