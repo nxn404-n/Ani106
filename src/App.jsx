@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import AniDetails from "./components/AniDetails";
 import SearchLandingPage from "./components/SearchLandingPage";
 import Homepage from "./components/Homepage";
-import { setShowDetails } from './feature/aniDetailsSlice'; // Import your actions
+import { setShowDetails } from './feature/aniDetailsSlice';
 import { setSearchShowFalse, setSearchShowTrue } from './feature/searchSlice';
 
 function App() {
