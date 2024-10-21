@@ -21,7 +21,6 @@ const UpcomingAni = () => {
   return (
     <div className="flex flex-col gap-7">
       <h2 className="mt-9 text-xl">Upcoming Anime</h2>
-
       <HorizontalSlide data={upcomingAnidata} sliderId="UpcomingAni" />
     </div>
   );

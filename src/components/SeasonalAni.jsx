@@ -25,6 +25,7 @@ const SeasonalAni = () => {
     (state) => state.seasonalAni,
   );
 
+  // Fetches specified season anime data from the api
   const handleClick = (season, year) => {
     dispatch(fetchSeasonalAniData({ url: apiUrl, season: season, year: year }));
     setCurrentSeason({
@@ -33,6 +34,7 @@ const SeasonalAni = () => {
     })
   };
 
+  // Gets all the seasons when the app renders
   useEffect(() => {
     dispatch(getSeasonsData(apiUrl));
   }, [apiUrl, dispatch]);
@@ -44,7 +46,7 @@ const SeasonalAni = () => {
       <div className="cursor-pointer">
         <div
           className="relative flex max-w-44 items-center justify-center gap-1 rounded-md border-2 border-[#FFBADE] py-1"
-          onClick={() => handleShowSeasons()}
+          onClick={handleShowSeasons}
         >
           <p>Select any season</p>
           <MdKeyboardArrowDown className="text-2xl" />

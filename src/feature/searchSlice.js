@@ -22,6 +22,7 @@ const searchSlice = createSlice({
     setSearchShowFalse: (state) => {
       state.searchShow = false;
     },
+    // This two reducer is for testing
     setSearchFor: (state, { payload }) => {
       state.searchFor = payload;
     },

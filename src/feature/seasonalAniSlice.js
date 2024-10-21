@@ -15,7 +15,12 @@ const initialState = {
 const seasonalAniSlice = createSlice({
   name: 'seasonalAni',
   initialState,
-  reducers: {},
+  reducers: {
+    // This reducer is for test
+    setSeasons: (state, { payload }) => {
+      state.seasons = payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchSeasonalAniData.pending, (state) => {
@@ -44,4 +49,5 @@ const seasonalAniSlice = createSlice({
   }
 })
 
+export const { setSeasons } = seasonalAniSlice.actions;
 export default seasonalAniSlice.reducer;
