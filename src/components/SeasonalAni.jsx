@@ -61,7 +61,7 @@ const SeasonalAni = () => {
               <div key={yearData.year}>
                 <strong className="text-[#FFBADE]">{yearData.year}</strong>
                 {yearData.seasons.map((season, index) => (
-                  <>
+                  <div key={`${season} ${yearData.year}`}>
                     <div
                       key={`${yearData.year}-${index}`}
                       onClick={() => handleClick(season, yearData.year)}
@@ -69,7 +69,7 @@ const SeasonalAni = () => {
                       {season} {yearData.year}
                     </div>
                     <hr/>
-                  </>
+                  </div>
                 ))}
               </div>
             ))}

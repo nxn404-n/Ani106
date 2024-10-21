@@ -102,7 +102,7 @@ const HorizontalSlide = ({ data, sliderId }) => {
 HorizontalSlide.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      mal_id: PropTypes.number.isRequired,
+      mal_id: PropTypes.number,
       images: PropTypes.shape({
         webp: PropTypes.shape({
           image_url: PropTypes.string.isRequired,
