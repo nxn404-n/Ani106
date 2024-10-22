@@ -60,6 +60,7 @@
 
 ### Key Features <a name="key-features"></a>
 
+- Responsive(Mobile first)
 - Correct use of Gitflow
 - Correct use of ES6 syntax
 - Used API to the project
@@ -110,6 +111,14 @@ Use <code>npm i</code> to install all dependencies
 ### Deployment
 
 Use <code>npm run build</code> to deploy the project
+
+## Run test
+
+- Use <code>npm test</code> to run test
+
+- Use <code>npm run test:ui</code> to run test ui
+
+-Use <code>npm run coverage</code> to run test coverage
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
